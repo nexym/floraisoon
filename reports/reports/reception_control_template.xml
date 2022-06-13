@@ -35,229 +35,181 @@
                         <table width="100%" border="2">
                             <tr>
                                 <td width="25%">Date</td>
-                                <td width="14%"></td>
-                                <td width="14%">Heure</td>
-                                <td width="14%"></td>
-                                <td width="14%">Respect</td>
-                                <td width="14%"></td>
+                                <td colspan="3">
+                                    <span t-field="o.date"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Fournisseur</td>
-                                <td colspan="5"></td>
+                                <td colspan="3">
+                                    <span t-field="o.partner_id"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Fich de réception N°</td>
-                                <td colspan="5"></td>
+                                <td colspan="3">
+                                    <span t-field="o.receipt_id"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Bon de commande N°</td>
-                                <td colspan="3"></td>
+                                <td>
+                                    <span t-field="o.purchase_id"/>
+                                </td>
                                 <td>Concordance</td>
-                                <td></td>
+                                <td>
+                                    <span t-field="o.concordance"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Condition de transport</td>
-                                <td class="text-center">0</td>
-                                <td class="text-center">1</td>
-                                <td class="text-center">2</td>
-                                <td class="text-center" colspan="2">Commentaires</td>
+
+                                <td class="text-center">
+                                    <span t-field="o.condition"/>
+                                </td>
+                                <td class="text-center">Commentaires</td>
+                                <td class="text-center">
+                                    <span t-field="o.comments"/>
+                                </td>
+
                             </tr>
                             <tr>
                                 <td>Propreté</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td colspan="2"></td>
+                                <td colspan="3">
+                                    <span t-field="o.cleanliness"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Protection de l'engin</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td colspan="2"></td>
+                                <td colspan="3">
+                                    <span t-field="o.machine_protection"/>
+                                </td>
+
                             </tr>
                             <tr>
                                 <td>Présence d'éléments<br/>indiserables
                                 </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td colspan="2"></td>
+                                <td colspan="3">
+                                    <span t-field="o.unwanted_elements"/>
+                                </td>
+
                             </tr>
                             <tr>
                                 <td>Comportement du<br/>chauffeur
                                 </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+
+                                <td>
+                                    <span t-field="o.driver_behavior"/>
+                                </td>
                                 <td>Nom du chauffeur</td>
-                                <td></td>
+                                <td>
+                                    <span t-field="o.driver_name"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Total</td>
-                                <td colspan="3"></td>
+                                <td colspan="3">
+                                    <span t-field="o.total"/>
+                                </td>
                             </tr>
                         </table>
                         <br/>
                         <br/>
                         <table width="100%">
                             <tr>
-                                <td width="25%">Produits</td>
-                                <td width="14%" style="border: 1px solid black;"></td>
-                                <td width="14%" style="border: 1px solid black;"></td>
-                                <td width="14%" style="border: 1px solid black;"></td>
-                                <td width="14%" style="border: 1px solid black;"></td>
-                                <td width="14%" style="border: 1px solid black;"></td>
+                                <td width="20%" class="text-center">Produits</td>
+                                <td width="80%" style="border: 1px solid black;">
+                                    <span t-field="o.product_id"/>
+                                </td>
                             </tr>
-                            <tr class="text-center">
-                                <td width="25%" style="border: 1px solid black;" rowspan="4">Paramétres à
+                            <tr>
+                                <td width="20%" style="border: 1px solid black;">Paramétres à
                                     contoler
                                 </td>
-                                <td width="14%" style="border: 1px solid black;">Article 1</td>
-                                <td width="14%" style="border: 1px solid black;">Article 2</td>
-                                <td width="14%" style="border: 1px solid black;">Article 3</td>
-                                <td width="14%" style="border: 1px solid black;">Article 4</td>
-                                <td width="14%" style="border: 1px solid black;">Observations</td>
-                            </tr>
-
-
-                            <tr>
-                                <td width="14%" rowspan="3"
-                                    style="border-top: 1px solid white;border-left: 1px solid white;color:white">1
-                                </td>
-                                <td width="14%" rowspan="3"
-                                    style="border-top: 1px solid white;border-left: 1px solid white;color:white">2
-                                </td>
-                                <td width="14%" rowspan="3"
-                                    style="border-top: 1px solid white;border-left: 1px solid white;color:white">3
-                                </td>
-                                <td width="14%" rowspan="3"
-                                    style="border-top: 1px solid white;border-left: 1px solid white;color:white">4
-                                </td>
-                                <td width="14%"
-                                    style="border-top: 1px solid white;border-right: 1px solid black;color:white">1
-                                </td>
-                            </tr>
-                            <tr>
-                                <td
-                                        style="border-top: 1px solid white;border-right: 1px solid black;color:white">2
-                                </td>
-                            </tr>
-                            <tr>
-                                <td
-                                        style="border-top: 1px solid white;border-right: 1px solid black;color:white">3
+                                <td width="80%" style="border: 1px solid black;">
+                                    <span t-field="o.setting"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid black;">Etiquetage</td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;">
+                                    <span t-field="o.etiquetage"/>
+                                </td>
+
                             </tr>
                             <tr>
                                 <td style="border: 1px solid black;">Intégrité de l'emballage</td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;">
+                                    <span t-field="o.emballage"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid black;">Propreté</td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;">
+                                    <span t-field="o.cleanliness2"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid black;">DDM ( 3 mois après<br/>fabrication)
                                 </td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;">
+                                    <span t-field="o.ddm"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid black;">Odeur</td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;">
+                                    <span t-field="o.odeur"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid black;">Couleur</td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;">
+                                    <span t-field="o.color"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid black;">Apparence</td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;">
+                                    <span t-field="o.apparence"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid black;">Texture</td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;">
+                                    <span t-field="o.texture"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid black;">Qualité de l'impression de<br/>l'étiquetage
                                 </td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;">
+                                    <span t-field="o.quality"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid black;" class="text-center">Total par article</td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
-                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;">
+                                    <span t-field="o.total2"/>
+                                </td>
                             </tr>
                         </table>
-                        <div class="row">
-                        <div class="col-10">
-                        <p class="text-center">Moyenne d'evaluation de la réception :</p>
-                        <span>Acceptation à partire de</span>
-                        <span style="margin-left: 40px;">&gt; à la moyenne</span>
-                        <span style="margin-left: 250px;">par article</span>
-                        <br/>
-
-                        <span>Acceptation sous réserve</span>
-                        <span style="margin-left: 40px;">&lt; à la moyenne de 2 points</span>
-                        <br/>
-                        <span>Refus</span>
-                        <span style="margin-left:210px;">&lt; la moyenne</span>
-                        <br/>
-                        <p class="text-center">Acceptation des AC et des MP:
-                            ......................................................................................
-                        </p></div>
-                        <div class="col-2">
+                        <div style="page-break-inside: avoid;">
+                            <p class="text-center">Moyenne d'evaluation de la réception :</p>
+                            <span>Acceptation à partire de</span>
+                            <span style="margin-left: 40px;">&gt; à la moyenne</span>
+                            <span style="margin-left: 250px;">par article</span>
                             <br/>
-                            <img
-                                    t-if="o.qr_code"
-                                    style="display:block;margin:10% auto 0 auto;"
-                                    t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.qr_code, 100, 100)"
-                            />
 
-
-                        </div>
+                            <span>Acceptation sous réserve</span>
+                            <span style="margin-left: 40px;">&lt; à la moyenne de 2 points</span>
+                            <br/>
+                            <span>Refus</span>
+                            <span style="margin-left:210px;">&lt; la moyenne</span>
+                            <br/>
+                            <p class="text-center">Acceptation des AC et des MP:
+                                ......................................................................................
+                            </p>
                         </div>
                     </div>
                 </t>
@@ -265,16 +217,30 @@
         </t>
     </template>
 
-
+    <record id="paperformat_control" model="report.paperformat">
+        <field name="name">qweb paperformat</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">297</field>
+        <field name="page_width">210</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">1</field>
+        <field name="dpi">110</field>
+    </record>
     <record id="action_reception_control" model="ir.actions.report">
         <field name="name">Controle à la réception</field>
-        <field name="model">reception.control</field>
-        <field name="paperformat_id" ref="paperformat_custom"/>
+        <field name="model">quality.check</field>
+        <field name="paperformat_id" ref="paperformat_control"/>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">reports.reception_control_template</field>
         <field name="report_file">reports.reception_control_template</field>
         <field name="print_report_name">'Controle à la réception'</field>
-        <field name="binding_model_id" eval="False"/>
+        <field name="binding_model_id" ref="quality_control.model_quality_check"/>
         <field name="binding_type">report</field>
     </record>
 </odoo>

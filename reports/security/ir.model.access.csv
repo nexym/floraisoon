@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_supplier_sheet,name_supplier_sheet,model_supplier_sheet,base.group_user,1,1,1,0
-access_reception_control,name_reception_control,model_reception_control,base.group_user,1,1,1,0

@@ -24,199 +24,147 @@
                                     </h3>
                                 </center>
                             </div>
-                            <div class="col-4 text-right" style="font-size: 15px;"><br/>
-                                ENR.ACH.02<br/>
+                            <div class="col-4 text-right" style="font-size: 15px;">
+                                <br/>
+                                ENR.ACH.02
+                                <br/>
                                 Révision : A<br/>Date
                                 <span t-esc="time.strftime('%d/%m/%Y')"/>
                             </div>
                         </div>
+                        <br/>
+                        <br/>
+                        <div>Fournisseur :
+                            <span t-field="o.name"/>
+                        </div>
+                        <br/>
+                        <br/>
                         <table border="2" width="100%">
                             <tr class="text-center" style="background-color: #edfdcb">
-                                <td width="7%">N°</td>
-                                <td width="44%">Critères</td>
-                                <td width="7%">Pondérati<br/>on
+                                <td width="10%">N°</td>
+                                <td width="60%">Critères</td>
+                                <td width="30%">Pondérati<br/>on
                                 </td>
-                                <td width="14%" colspan="2">MULTILAB</td>
-                                <td width="14%" colspan="2">TTS</td>
-                                <td width="14%" colspan="2">CENTRE SOUSSE</td>
+
                             </tr>
                             <tr>
-                                <td width="7%" class="text-center">1</td>
-                                <td width="44%">Prix</td>
-                                <td width="7%"></td>
-                                <td width="7%"></td>
-                                <td width="7%"></td>
-                                <td width="7%"></td>
-                                <td width="7%"></td>
-                                <td width="7%"></td>
-                                <td width="7%"></td>
+                                <td class="text-center">1</td>
+                                <td>Prix</td>
+                                <td width="30%">
+                                    <span t-field="o.price"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-center">2</td>
                                 <td>Delai Livrasion</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td width="30%">
+                                    <span t-field="o.delais"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-center">3</td>
                                 <td>Qualité</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td width="30%">
+                                    <span t-field="o.quality"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-center">4</td>
                                 <td>Capacité de production</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td width="30%">
+                                    <span t-field="o.production_capacity"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-center">5</td>
                                 <td>Localisation géographique</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td width="30%">
+                                    <span t-field="o.location"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-center">6</td>
                                 <td>Capacité technique</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td width="30%">
+                                    <span t-field="o.technical_capacity"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-center">7</td>
                                 <td>Gestion et organisation</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td width="30%">
+                                    <span t-field="o.management_organization"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-center">8</td>
                                 <td>Réputation et Postion dans l'industrie</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td width="30%">
+                                    <span t-field="o.reputation_position"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-center">9</td>
                                 <td>Situation financiére</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td width="30%">
+                                    <span t-field="o.financial_situation"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-center">10</td>
                                 <td>Assistance</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td width="30%">
+                                    <span t-field="o.assistance"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-center">11</td>
                                 <td>Systeme de communication</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td width="30%">
+                                    <span t-field="o.communication_systeme"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-center">12</td>
                                 <td>Impression</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td width="30%">
+                                    <span t-field="o.impression"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-center">13</td>
                                 <td>Désir de faire des affaires</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td width="30%">
+                                    <span t-field="o.do_business"/>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-center">14</td>
                                 <td>Garantie et SAP</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td width="30%">
+                                    <span t-field="o.sap"/>
+                                </td>
                             </tr>
                             <tr>
-                                <td width="7%" class="text-center">15</td>
-                                <td width="44%">Conditionde paiement</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td class="text-center">15</td>
+                                <td>Conditionde paiement</td>
+                                <td width="30%">
+                                    <span t-field="o.condition"/>
+                                </td>
                             </tr>
                             <tr>
 
-                                <td colspan="3" style="background-color: #edfdcb" class="text-center">Score Total</td>
-                                <td colspan="2" style="background-color: #6B9936"></td>
-                                <td colspan="2" style="background-color: #6B9936"></td>
-                                <td colspan="2" style="background-color: #6B9936"></td>
+                                <td colspan="2" style="background-color: #edfdcb" class="text-center">Score Total</td>
+                                <td style="background-color: #6B9936">
+                                    <span t-field="o.total"/>
+                                </td>
 
 
                             </tr>
                         </table>
                         <br/>
                         <br/>
+                        <div class="row"> <div class="col-10">
                         <table border="2" width="50%" style="background-color: #edfdcb">
                             <tr>
                                 <td colspan="2" class="text-center">Légende</td>
@@ -238,8 +186,7 @@
                                 <td width="80%">Exellent</td>
                             </tr>
                         </table>
-                        <div class="row">
-                        <div class="col-10"></div>
+                        </div>
                         <div class="col-2">
                             <br/>
                             <img
@@ -250,8 +197,10 @@
 
 
                         </div>
-                        </div>
                     </div>
+                    </div>
+                    <br/>
+
                 </t>
             </t>
         </t>
@@ -266,8 +215,8 @@
         <field name="orientation">Portrait</field>
         <field name="margin_top">10</field>
         <field name="margin_bottom">0</field>
-        <field name="margin_left">15</field>
-        <field name="margin_right">15</field>
+        <field name="margin_left">20</field>
+        <field name="margin_right">20</field>
         <field name="header_line" eval="False"/>
         <field name="header_spacing">1</field>
         <field name="dpi">110</field>
@@ -276,7 +225,7 @@
 
     <record id="action_supplier_sheet" model="ir.actions.report">
         <field name="name">Fiche de sélection des fournisseurs</field>
-        <field name="model">supplier.sheet</field>
+        <field name="model">res.partner</field>
         <field name="report_type">qweb-pdf</field>
         <field name="paperformat_id" ref="paperformat_custom"/>
         <field name="report_name">reports.report_supplier_sheet_template</field>

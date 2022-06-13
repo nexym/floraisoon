@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+
+    <record id="view_partner_form_inherit_reports" model="ir.ui.view">
+        <field name="name">res.partner.view.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <field name="supplier_rank" invisible="1"/>
+                    <button name="print_report" string="Fiche de sélection" type="object"
+                            attrs="{'invisible': [('supplier_rank','=', 0)]}"
+                            class="oe_highlight"/>
+                </header>
+            </xpath>
+            <xpath expr="//page[@name='sales_purchases']" position="after">
+                <page name="criteria" string="Critères" attrs="{'invisible': [('supplier_rank','=', 0)]}">
+                    <group>
+                        <group>
+                            <field name="price"/>
+                            <field name="delais"/>
+                            <field name="quality"/>
+                            <field name="production_capacity"/>
+                            <field name="location"/>
+                            <field name="technical_capacity"/>
+                            <field name="management_organization"/>
+                            <field name="reputation_position"/>
+                        </group>
+                        <group>
+                            <field name="financial_situation"/>
+                            <field name="assistance"/>
+                            <field name="communication_systeme"/>
+                            <field name="impression"/>
+                            <field name="do_business"/>
+                            <field name="sap"/>
+                            <field name="condition"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="total" force_save="1"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

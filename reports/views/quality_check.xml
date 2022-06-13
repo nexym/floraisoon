@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+
+    <record id="quality_check_view_form_inherit" model="ir.ui.view">
+        <field name="name">quality.check.view.form.inherit</field>
+        <field name="model">quality.check</field>
+        <field name="inherit_id" ref="quality_control.quality_check_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//page[@name='notes']" position="after">
+                <page string="Controle à la récepetion" name="controle">
+                    <group>
+                        <group>
+                            <field name="date"/>
+                            <field name="partner_id"/>
+                            <field name="receipt_id"/>
+                            <field name="purchase_id"/>
+                            <field name="concordance"/>
+                            <field name="condition"/>
+                            <field name="comments"/>
+                            <field name="cleanliness"/>
+                            <field name="machine_protection"/>
+                            <field name="unwanted_elements"/>
+                            <field name="driver_name"/>
+                            <field name="driver_behavior"/>
+                            <field name="total"/>
+                        </group>
+                            <group>
+                                <field name="product_id"/>
+                                <field name="setting"/>
+                                <field name="etiquetage"/>
+                                <field name="emballage"/>
+                                <field name="cleanliness2"/>
+                                <field name="ddm"/>
+                                <field name="odeur"/>
+                                <field name="color"/>
+                                <field name="apparence"/>
+                                <field name="texture"/>
+                                <field name="quality"/>
+                                <field name="total2"/>
+                        </group>
+
+                    </group>
+                    <!--                    <group>-->
+                    <!--                    <field name="quality_line_ids" nolabel="1" >-->
+                    <!--                        <tree editable="bottom">-->
+
+                    <!--                            <field name="product_id"/>-->
+                    <!--                            <field name="etiquetage"/>-->
+                    <!--                            <field name="emballage"/>-->
+                    <!--                            <field name="cleanliness"/>-->
+                    <!--                            <field name="ddm"/>-->
+                    <!--                            <field name="odeur"/>-->
+                    <!--                            <field name="color"/>-->
+                    <!--                            <field name="apparence"/>-->
+                    <!--                            <field name="texture"/>-->
+                    <!--                            <field name="quality"/>-->
+                    <!--                            <field name="total"/>-->
+                    <!--                        </tree>-->
+                    <!--                    </field>-->
+
+                    <!--                    </group>-->
+
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

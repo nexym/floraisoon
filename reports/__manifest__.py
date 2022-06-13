@@ -1,13 +1,12 @@
 {
     "name": "Reports",
     "version": "15.0.1.0.0",
-    "depends": ["purchase","sale"],
+    "depends": ["purchase", "sale", "quality_control","base"],
     "data": [
-        "security/ir.model.access.csv",
-        "reports/report_purchasequotation_document.xml",
         "reports/suppliers_sheet_template.xml",
         "reports/reception_control_template.xml",
-        "views/reports.xml",
+        "views/quality_check.xml",
+        "views/res_partner_views.xml",
 
     ],
     "installable": True,
