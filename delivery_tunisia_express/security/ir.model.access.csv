@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_delivery_tunisia_express_delivery_tunisia_express,delivery_tunisia_express.delivery_tunisia_express,model_delivery_tunisia_express_delivery_tunisia_express,base.group_user,1,1,1,1

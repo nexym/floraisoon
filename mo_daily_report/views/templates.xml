@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <template id="mo_daily_template_id">
+        <t t-call="web.external_layout">
+            <t t-call="web.html_container">
+                <div class="page">
+                    <h3 class="text-center">Materials Required For Today</h3>
+                </div>
+                <div>
+                    <h3 class="text-left">Date:
+                        <span t-esc="date_required"/>
+                    </h3>
+                </div>
+                <div>
+                    <table class="table table-condensed table-bordered">
+                        <t t-set="counter" t-value="1"/>
+                        <thead>
+                            <th class="text-center">
+                                <strong>NO</strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Internal Reference</strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Location</strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Quantity</strong>
+                            </th>
+
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs" t-as="doc">
+                                <tr>
+                                    <td class="text-center">
+                                        <span t-esc="counter"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-esc="doc['default_code']"/>
+                                    </td>
+                                     <td class="text-center">
+                                        <span t-esc="doc['location_id']"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-esc="doc['product_uom_qty']"/>
+                                    </td>
+                                    <t t-set="counter" t-value="counter+1"/>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    <table width="100%">
+                        <tr>
+                            <td class="text-left" colspan="3">Printed by:
+                                <span t-esc="user.name"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <report id="daily_mo_report_id"
+            model="daily.mo.wizard"
+            string="Daily Materials Orders"
+            report_type="qweb-pdf"
+            file="mo_daily_report.mo_daily_template_id"
+            name="mo_daily_report.mo_daily_template_id"
+            menu="False"/>
+
+</odoo>

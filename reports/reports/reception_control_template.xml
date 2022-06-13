@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="reception_control_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="header"/>
+                    <div class="footer"/>
+                    <div class="page" style="font-size: 22px;">
+
+                        <div class="row">
+                            <div class="col-4">
+                                <img
+                                        t-att-src="'/logo.png?o.company_id=%s' % o.company_id"
+                                        style="padding: 0px; margin: 0px; height: 110px; width: 150px;"
+                                        t-att-alt="'%s' % o.company_id.name"
+                                />
+                            </div>
+                            <div class="col-4">
+                                <br/>
+                                <h3>
+                                    <center>Controle à la réception</center>
+                                </h3>
+                            </div>
+                            <div class="col-4 text-right" style="font-size: 15px;">
+                                <br/>
+                                ENR.ACH.02
+                                <br/>
+                                Révision : A<br/>Date
+                                <span t-esc="time.strftime('%d/%m/%Y')"/>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <table width="100%" border="2">
+                            <tr>
+                                <td width="25%">Date</td>
+                                <td width="14%"></td>
+                                <td width="14%">Heure</td>
+                                <td width="14%"></td>
+                                <td width="14%">Respect</td>
+                                <td width="14%"></td>
+                            </tr>
+                            <tr>
+                                <td>Fournisseur</td>
+                                <td colspan="5"></td>
+                            </tr>
+                            <tr>
+                                <td>Fich de réception N°</td>
+                                <td colspan="5"></td>
+                            </tr>
+                            <tr>
+                                <td>Bon de commande N°</td>
+                                <td colspan="3"></td>
+                                <td>Concordance</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Condition de transport</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">2</td>
+                                <td class="text-center" colspan="2">Commentaires</td>
+                            </tr>
+                            <tr>
+                                <td>Propreté</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td>Protection de l'engin</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td>Présence d'éléments<br/>indiserables
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td>Comportement du<br/>chauffeur
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Nom du chauffeur</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td colspan="3"></td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <br/>
+                        <table width="100%">
+                            <tr>
+                                <td width="25%">Produits</td>
+                                <td width="14%" style="border: 1px solid black;"></td>
+                                <td width="14%" style="border: 1px solid black;"></td>
+                                <td width="14%" style="border: 1px solid black;"></td>
+                                <td width="14%" style="border: 1px solid black;"></td>
+                                <td width="14%" style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr class="text-center">
+                                <td width="25%" style="border: 1px solid black;" rowspan="4">Paramétres à
+                                    contoler
+                                </td>
+                                <td width="14%" style="border: 1px solid black;">Article 1</td>
+                                <td width="14%" style="border: 1px solid black;">Article 2</td>
+                                <td width="14%" style="border: 1px solid black;">Article 3</td>
+                                <td width="14%" style="border: 1px solid black;">Article 4</td>
+                                <td width="14%" style="border: 1px solid black;">Observations</td>
+                            </tr>
+
+
+                            <tr>
+                                <td width="14%" rowspan="3"
+                                    style="border-top: 1px solid white;border-left: 1px solid white;color:white">1
+                                </td>
+                                <td width="14%" rowspan="3"
+                                    style="border-top: 1px solid white;border-left: 1px solid white;color:white">2
+                                </td>
+                                <td width="14%" rowspan="3"
+                                    style="border-top: 1px solid white;border-left: 1px solid white;color:white">3
+                                </td>
+                                <td width="14%" rowspan="3"
+                                    style="border-top: 1px solid white;border-left: 1px solid white;color:white">4
+                                </td>
+                                <td width="14%"
+                                    style="border-top: 1px solid white;border-right: 1px solid black;color:white">1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                        style="border-top: 1px solid white;border-right: 1px solid black;color:white">2
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                        style="border-top: 1px solid white;border-right: 1px solid black;color:white">3
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Etiquetage</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Intégrité de l'emballage</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Propreté</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">DDM ( 3 mois après<br/>fabrication)
+                                </td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Odeur</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Couleur</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Apparence</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Texture</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Qualité de l'impression de<br/>l'étiquetage
+                                </td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;" class="text-center">Total par article</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                        </table>
+                        <div class="row">
+                        <div class="col-10">
+                        <p class="text-center">Moyenne d'evaluation de la réception :</p>
+                        <span>Acceptation à partire de</span>
+                        <span style="margin-left: 40px;">&gt; à la moyenne</span>
+                        <span style="margin-left: 250px;">par article</span>
+                        <br/>
+
+                        <span>Acceptation sous réserve</span>
+                        <span style="margin-left: 40px;">&lt; à la moyenne de 2 points</span>
+                        <br/>
+                        <span>Refus</span>
+                        <span style="margin-left:210px;">&lt; la moyenne</span>
+                        <br/>
+                        <p class="text-center">Acceptation des AC et des MP:
+                            ......................................................................................
+                        </p></div>
+                        <div class="col-2">
+                            <br/>
+                            <img
+                                    t-if="o.qr_code"
+                                    style="display:block;margin:10% auto 0 auto;"
+                                    t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.qr_code, 100, 100)"
+                            />
+
+
+                        </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+    <record id="action_reception_control" model="ir.actions.report">
+        <field name="name">Controle à la réception</field>
+        <field name="model">reception.control</field>
+        <field name="paperformat_id" ref="paperformat_custom"/>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">reports.reception_control_template</field>
+        <field name="report_file">reports.reception_control_template</field>
+        <field name="print_report_name">'Controle à la réception'</field>
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

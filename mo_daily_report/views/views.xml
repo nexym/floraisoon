@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="mrp_production_inh" model="ir.ui.view">
+            <field name="name">inherit mrp</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='bom_id']" position="after">
+                    <br/>
+                    <field name="process_date"/>
+
+                </xpath>
+
+            </field>
+        </record>
+        <record id="daily_mo_wizard_id" model="ir.ui.view">
+            <field name="name">Daily.Mo</field>
+            <field name="model">daily.mo.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Daily Material Report">
+                    <group>
+                        <group>
+                            <field name="date_required"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="get_report" string="Print" type="object" class="oe_highlight"/>
+                        <button string="Cancel" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="mo_daily_report_action"
+                    name="Daily Orders Report"
+                    res_model="daily.mo.wizard"
+                    view_mode="form"
+                    target="new"/>
+
+
+        <menuitem name="Daily Material Orders " id="mo_daily_report" parent="mrp.menu_mrp_root"
+                  action="mo_daily_report_action" sequence="1000"/>
+    </data>
+</odoo>

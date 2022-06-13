@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="assets_frontend" name="setu_inventory_reports assets" inherit_id="web.assets_backend">
+		<xpath expr="//link" position="before">
+			<link rel="stylesheet" href="/"/>
+			<link rel="stylesheet" href="/"/>
+			<link rel="stylesheet" href="/"/>
+			<link rel="stylesheet" href="/"/>
+		</xpath>
+	</template>
+	<template id="assets_backend" name="setu_inventory_reports_assets" inherit_id="web.assets_backend">
+		<xpath expr="." position="inside">
+			<script  type="text/javascript" src="/"></script>
+			<script  type="text/javascript" src="/"></script>
+		</xpath>
+	</template>
+</odoo>

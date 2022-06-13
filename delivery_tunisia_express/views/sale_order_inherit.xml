@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="sale_order_form_inherit_tunisia" model="ir.ui.view">
+    <field name="name">sale.order.form.tunisia</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//button[@name='action_cancel']" position="after">
+        <button name="shipment_confirm" type="object" string="Confirm Shipment"/>
+        <field name="shipment_confirm_chk" invisible="1"/>
+        <button name="barcode_track" type="object" string="Track Barcode" attrs="{'invisible': [('shipment_confirm_chk', '!=', True)]}"/>
+      </xpath>
+      <xpath expr="//page[@name='customer_signature']" position="after">
+        <page groups="base.group_no_one" string="Shipment Information" name="shipment_info" attrs="{'invisible': [('carrier_id_new', '!=', 'Tunisia Express Pro')]}">
+            <sheet>
+              <group>
+                  <group>
+                      <field name="user_name"/>
+                      <field name="destinataire"/>
+                      <field name="adresse_de_livraison"/>
+                      <field name="carrier_id_new"/>
+                  </group>
+                  <group>
+                      <field name="gouvernorat_livraison"/>
+                      <field name="telephone_de_contact_livraison"/>
+                      <field name="code_postal_livraison"/>
+                  </group>
+              </group>
+              <notebook>
+                  <page string="Shipment Information">
+                      <group>
+                          <group>
+                              <field name="date_enlevement"/>
+                              <field name="date_livraison"/>
+                              <field name="nombre_de_colis"/>
+                          </group>
+                          <group>
+                              <field name="libelle_de_marchandise"/>
+                              <field name="valeur_marchandise"/>
+                              <field name="barcode_client"/>
+                              <field name="description"/>
+                          </group>
+                      </group>
+                  </page>
+                  <page string="Vendor Information">
+                      <group>
+                          <group>
+                              <field name="adresse_enlevement"/>
+                              <field name="gouvernorat_enlevement"/>
+                              <field name="code_postal_enlevement"/>
+                          </group>
+                          <group>
+                              <field name="telephone_de_contact_enlevement"/>
+                              <field name="id_commande_client"/>
+                          </group>
+                      </group>
+                  </page>
+              </notebook>
+          </sheet>
+        </page>
+      </xpath>
+    </field>
+  </record>
+
+    <record id="mymodule_message_wizard_form" model="ir.ui.view">
+        <field name="name">mymodule.message.wizard.form</field>
+        <field name="model">mymodule.message.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="message" readonly="True"/>
+                <label for="barcode" string="Barcode"/>
+                <field name="barcode" readonly="True"/>
+                <footer>
+                    <button name="action_close" string="Ok" type="object" default_focus="1" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="mymodule_message_wizard_error_form" model="ir.ui.view">
+        <field name="name">mymodule.message.wizard.error.form</field>
+        <field name="model">mymodule.message.wizard.error</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="message" readonly="True"/>
+                <footer>
+                    <button name="action_close_2" string="Ok" type="object" default_focus="1" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
